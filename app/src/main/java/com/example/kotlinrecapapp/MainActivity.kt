@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,13 +25,24 @@ class MainActivity : ComponentActivity() {
         setContent {
             KotlinRecapAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    val value= remember{
+                    val value = remember {
                         mutableStateOf(0)
 
                     }
                     Column {
-                        Row{
-                           Text()
+                        Text(text = value.value.toString())
+                        Row {
+                            Button(onClick = { value.value = value.value + 1 }) {
+
+                                Text(text = "Increment")
+
+                            }
+                            Button(onClick = { value.value = value.value - 1 }) {
+
+                                Text(text = "Decrement")
+
+                            }
+
                         }
                     }
                 }
