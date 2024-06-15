@@ -16,6 +16,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.kotlinrecapapp.ui.theme.KotlinRecapAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
                     }
                     Column {
-                        Text(text = value.value.toString())
+                        Text(text = value.value.toString(),modifier = Modifier.padding(10.dp))
                         Row {
                             Button(onClick = { value.value = value.value + 1 }) {
 
